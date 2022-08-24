@@ -1,0 +1,22 @@
+body {
+    font-family: sans-serif;
+    background-color: lightblue;
+    text-align: center;
+    margin: 150px;
+  }
+
+  button {
+    border: none;
+    background-color: lightslategray;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px
+      0px;
+    color: whitesmoke;
+    display: inline-block;
+    font-size: 15px;
+    line-height: 22px;
+    margin: 16px;
+    padding: 14px ;
+    text-align: center;
+    cursor: pointer;
+  }
