@@ -9,10 +9,10 @@ var quizTitle = document.querySelector("#title");
 var questionsEl = document.querySelector("#questions");
 
 var questions = [
-    {question: "One", possibleAnswers: [1,2,3,4], correct: 0 },
-    {question: "Two", possibleAnswers: [5,6,7,8], correct: 3 },
-    {question: "Three", possibleAnswers: [9,10,11,12], correct: 2 },
-    {question: "Four", possibleAnswers: [13,14,15,16], correct: 1 },
+    { question: "Which flower is associated with bad luck?", possibleAnswers: ["lillies", "roses", "peonies", "azaleas"], correct: 0 },
+    { question: "What is the largest moth in the world?", possibleAnswers: ["atlas", "hercules", "deathead", "luna"], correct: 0 },
+    { question: "How many species of turtles are there?", possibleAnswers: [100, "200-300", "350-400", "one thousand"], correct: 2 },
+    { question: "How many teeth do foxes have?", possibleAnswers: [30, 42, 50, 35], correct: 1 },
 ];
 var cursor = 0;
 
@@ -26,7 +26,7 @@ function displayState() {
         startEl.style.display = 'none';
         quizEl.style.display = 'block';
         endEl.style.display = 'none';
-        displayQuestion();
+
     }
     if (state === 'end') {
         startEl.style.display = 'none';
@@ -45,7 +45,7 @@ function reset() {
     init();
 }
 
-startButton.addEventListener("click", function(){
+startButton.addEventListener("click", function () {
     state = 'quiz';
     displayQuestion();
     displayState();
@@ -53,34 +53,47 @@ startButton.addEventListener("click", function(){
 
 
 questionsEl.addEventListener("click", function (event) {
-var element = event.target;
-if (element.matches('')) {
-    var index = Array.from(element.parentElement.children).indexOf(element);
-    console.log(index);
-    cursor++;
+    var element = event.target;
 
-    if (cursor >= questions.length) {
-        state = 'end';
-        displayState();
-    } else {
-        displayQuestion();
+
+    if (element.type === 'submit') {
+        var clickedAnswer = element.textContent
+        var clickedIndex = questions[cursor].possibleAnswers.indexOf(clickedAnswer);
+        console.log(clickedIndex === questions[cursor].correct);
     }
-    }
+
 });
 
 
 function displayQuestion() {
-
-    var titleText = questions[cursor].question; 
+    questionsEl.innerHTML = ''
+    var titleText = questions[cursor].question;
     quizTitle.textContent = titleText;
 
     var firstAnswer = questions[cursor].possibleAnswers[0];
     var firstAnswerBtn = document.createElement("button");
     firstAnswerBtn.textContent = firstAnswer;
     questionsEl.append(firstAnswerBtn);
+
+    var secondAnswer = questions[cursor].possibleAnswers[1];
+    var secondAnswerBtn = document.createElement("button");
+    secondAnswerBtn.textContent = secondAnswer;
+    questionsEl.append(secondAnswerBtn);
+
+    var thirdAnswer = questions[cursor].possibleAnswers[2];
+    var thirdAnswerBtn = document.createElement("button");
+    thirdAnswerBtn.textContent = thirdAnswer;
+    questionsEl.append(thirdAnswerBtn);
+
+    var fourthAnswer = questions[cursor].possibleAnswers[3];
+    var fourthAnswerBtn = document.createElement("button");
+    fourthAnswerBtn.textContent = fourthAnswer;
+    questionsEl.append(fourthAnswerBtn);
+
+
 }
 
-submitScoreButton.addEventListener("click", function(){
+submitScoreButton.addEventListener("click", function () {
     reset();
 });
 
