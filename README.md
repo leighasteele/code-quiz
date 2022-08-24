@@ -1,2 +1,11 @@
-# code-quiz
+# Code Quiz!
+
+## Description
 attempting to create  a quiz game with hmtl, css, &amp; js.
+[Link to live site]()
+
+
+This site is a quiz in which I have came up with questions that interest me, followed by their possible answers. The correct answer will reward the user with points as they are timed. In the end, the user can submit their name onto a scoreboard.
+
+## Screenshot
+![screenshot](./screenshot.png)
