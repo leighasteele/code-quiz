@@ -23,12 +23,12 @@ var questions = [
   {
     question: "How many species of turtles are there?",
     possibleAnswers: ["100", "200-300", "350-400", "one thousand"],
-    correct: 2,
+    correct: "350-400",
   },
   {
     question: "How many teeth do foxes have?",
-    possibleAnswers: [30, 42, 50, 35],
-    correct: 1,
+    possibleAnswers: ["30", "42", "50", "35"],
+    correct: "42",
   },
 ];
 var cursor = 0;
