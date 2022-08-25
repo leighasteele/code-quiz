@@ -68,27 +68,27 @@ startButton.addEventListener("click", function () {
   displayState();
 });
 
-// // timer for the user
-// var timeEl = timeLeft
-// var timeLeft = function () {
-//     var timeRemain = 35;
+// timer for the user
+var timeEl = timeLeft
+var timeLeft = function () {
+    var timeRemain = 35;
 
-//     timeInterval = setInterval(function () {
-//         timeRemain--;
-//         timeEl.textContent = timeRemain;
+    timeInterval = setInterval(function () {
+        timeRemain--;
+        timeEl.textContent = timeRemain;
 
-//         if (timeRemain === 0) {
-//             clearInterval(timeInterval);
-//             console.log()
-//         }
-//     }, 1000);
+        if (timeRemain === 0) {
+            clearInterval(timeInterval);
+            console.log()
+        }
+    }, 1000);
 
-// }
+}
 
-// startButton.addEventListener('click', function () {
-//     timeLeft();
-//     setState("title");
-// });
+startButton.addEventListener('click', function () {
+    timeLeft();
+    setState("title");
+});
 
 
 questionsEl.addEventListener("click", function (event) {
